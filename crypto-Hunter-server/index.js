@@ -9,6 +9,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
+
 app.listen(process.env.PORT || 5000, () => {
   console.log(`listening on PORT`);
 });
@@ -19,6 +20,13 @@ app.get('/', (req, res) => {
 
 
 app.post('/login', async (req, res) => {
+  console.log("herr"+req.body);
+  try {
+    await database();
+  } catch (error) {
+    // Handle the error here
+    return json({error:"data base failed to connect"});
+  }
   try {
     const response = await login(req.body.email);
     console.log(response);
