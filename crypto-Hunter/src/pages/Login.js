@@ -42,7 +42,7 @@ export default function Login() {
       } else if (response.status === 200) {
         const firstName = response.data.name.split(' ')[0];
         handlechange(firstName);
-        navigate('/crypto-hunter');
+        navigate('/');
       } else {
         alert('Email incorrect');
       }

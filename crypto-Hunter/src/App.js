@@ -33,7 +33,7 @@ const {setusername,setuseremail,setlogged}=CryptoState();
     <>
    
    
-    <BrowserRouter>
+    <BrowserRouter basename="/">
     <div style={{
       position: 'fixed',
          
@@ -45,7 +45,7 @@ const {setusername,setuseremail,setlogged}=CryptoState();
      
     <Routes>
    
-    <Route path="/crypto-hunter" Component={Homepage} exact/>
+    <Route path="/" Component={Homepage} exact/>
     <Route path="/coins/:id" Component={Coinpage} />
     <Route path="/login" Component={Login} />
     <Route path="/signup" Component={Signup} />

@@ -11,6 +11,8 @@ export default function Coinpage() {
   const [coin, setCoin] = useState();
   const [cost, setcost] = useState("");
  const [alert,setalert]=useState('');
+ const [buyButtonDisabled, setBuyButtonDisabled] = useState(false);
+
   const {funds,setfunds,logged,useremail, currency, symbol } = CryptoState();
 
   const fetchCoin = async () => {
@@ -29,10 +31,12 @@ export default function Coinpage() {
   async function handlebuy(e) {
     
     e.preventDefault();
-   
+    setBuyButtonDisabled(true);
+
   if(cost>funds)
   {
     setalert('Insufficient funds')
+    setBuyButtonDisabled(false);
     return;
   }
     const data = {
@@ -69,7 +73,7 @@ export default function Coinpage() {
     setTimeout(() => {
       setalert("");
     }, 2000);
-
+    setBuyButtonDisabled(false);
   }
 
   useEffect(() => {
@@ -175,24 +179,24 @@ export default function Coinpage() {
             placeholder="Enter amount in RS"
           />
           <button
-            style={{
-              padding: "12px 24px",
-              fontSize: "16px",
-              fontWeight: "bold",
-
-              color: "#fff",
-              backgroundColor: "green",
-              border: "none",
-              borderRadius: "4px",
-              cursor: "pointer",
-              transition: "background-color 0.3s ease",
-              marginLeft: "20px",
-              marginTop: "10px",
-            }}
-            type="Submit"
-          >
-            Buy
-          </button>
+          style={{
+            padding: '12px 24px',
+            fontSize: '16px',
+            fontWeight: 'bold',
+            color: '#fff',
+            backgroundColor: buyButtonDisabled ? 'lightgrey' : 'green', // Change the color if button is disabled
+            border: 'none',
+            borderRadius: '4px',
+            cursor: buyButtonDisabled ? 'not-allowed' : 'pointer', // Change the cursor if button is disabled
+            transition: 'background-color 0.3s ease',
+            marginLeft: '20px',
+            marginTop: '10px',
+          }}
+          type="Submit"
+          disabled={buyButtonDisabled} // Disable the button based on the state
+        >
+          Buy
+        </button>
         </form>
         <div style={{
           textAlign:'left',

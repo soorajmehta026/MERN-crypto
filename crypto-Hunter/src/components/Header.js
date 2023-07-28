@@ -17,7 +17,7 @@ export default function Header() {
           cursor: 'pointer',
           
         }}
-        onClick={() => navigate("/crypto-hunter")}
+        onClick={() => navigate("/")}
       >
         CryptoKeeper
     

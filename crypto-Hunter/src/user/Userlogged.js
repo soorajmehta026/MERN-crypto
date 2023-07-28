@@ -17,7 +17,7 @@ const Userlogged = () => {
     localStorage.setItem("loggedIn", "false");
     localStorage.setItem("userFirstName", "");
     localStorage.setItem("email", "");
-    navigate('/crypto-hunter')
+    navigate('/')
     
   };
 
