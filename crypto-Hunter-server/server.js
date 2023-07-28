@@ -7,15 +7,9 @@ import bcrypt from 'bcrypt'
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors(
-  {
-    origin:["https://deploy-mern-1whq.vercel.app"],
-    methods:["POST","GET"],
-    credentials:true
-  }
-));
+app.use(cors());
 app.listen(process.env.PORT || 5000, () => {
-  console.log("listening on 5000");
+  console.log(`listening on PORT`);
 });
 
 app.get('/', (req, res) => {
