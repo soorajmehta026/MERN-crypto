@@ -4,6 +4,7 @@ import login from './db/mongod.js';
 import { makeaccount } from './db/mongod.js';
 import { buy,watchlistdata,sellshare } from './db/mongod.js';
 import bcrypt from 'bcrypt'
+import database from './db/database.js';
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
