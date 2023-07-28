@@ -1,0 +1,23 @@
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+a{
+
+  color: gold;
+  text-decoration: none;
+}
+.main{
+  background-color: #14161a;
+  min-height: 100vh;
+  color: white;
+  padding-top: 55px;
+
+}
