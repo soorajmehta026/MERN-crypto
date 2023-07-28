@@ -1,7 +1,7 @@
 import axios from "axios";
 import { CryptoState } from "../CryptoContext";
 
-const baseURL = process.env.PORT || "http://localhost:5000"; // Set your base URL here
+const baseURL = process.env.PORT || "https://mern-crypto.vercel.app/"; // Set your base URL here
 
 export default async function uploadData(data) {
   const url = `${baseURL}/login`;
