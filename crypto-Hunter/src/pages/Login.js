@@ -36,14 +36,15 @@ export default function Login() {
 
     try {
       const response = await uploadData(data);
-
+      
       if (response.status === 401) {
         alert('Password incorrect');
       } else if (response.status === 200) {
         const firstName = response.data.name.split(' ')[0];
         handlechange(firstName);
         navigate('/');
-      } else {
+      }
+      else {
         alert('Email incorrect');
       }
     } catch (err) {
@@ -59,7 +60,7 @@ export default function Login() {
       <form onSubmit={handleSubmit}>
         <div className="login-container">
           <h1 className="login-heading">Login</h1>
-          {console.log("sbgdfb" + useremail)}
+          
 
           <div className="form-group">
             <label htmlFor="email">Email:</label>

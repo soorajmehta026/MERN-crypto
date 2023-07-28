@@ -10,7 +10,7 @@ export default async function uploadData(data) {
     const response = await axios.post(url, data);
     return response;
   } catch (err) {
-    return err.response;
+    return err.response.status;
   }
 }
 
@@ -22,8 +22,8 @@ export async function makeuser(data) {
 
     return response;
   } catch (err) {
-    throw new Error("Connection error");
-    //  return err.response.status;
+    
+      return err.response.status;
   }
 }
 
