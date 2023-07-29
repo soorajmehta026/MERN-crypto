@@ -141,13 +141,9 @@ function Watchlist() {
                         borderBottom: "1px solid grey",
                       }}
                     >
-                      <td
+                      <td className="imgElement"
                         onClick={() => navigate(`/coins/${id}`)}
-                        style={{
-                          cursor: "pointer",
-                          display: "flex",
-                          gap: 15,
-                        }}
+                       
                       >
                         <img
                           src={img}
@@ -159,6 +155,7 @@ function Watchlist() {
                           style={{
                             display: "flex",
                             flexDirection: "column",
+                            marginLeft:"10px"
                           }}
                         >
                           <span

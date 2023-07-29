@@ -5,14 +5,27 @@
     padding-left: 120px;
     padding-right: 120px;
   }
-  
+  .imgElement{
+    
+        display: flex;
+       
+ 
+  }
   
   /* Additional styles for responsiveness */
   @media screen and (max-width: 768px) {
     .table-container {
         max-width: 100%;
-        padding: 0px;
+        padding-left: 0px;
+
     }
+    .imgElement{
+    
+        display: flex;
+        flex-direction: column;
+        
+ 
+  }
   
    
   }

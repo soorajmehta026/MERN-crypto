@@ -56,8 +56,8 @@ export default function CoinsTable() {
         {
           <table
             className="table table-borderless table-dark"
-
-            // alignItems: 'center',
+        
+            // 
           >
             <thead
               style={{
@@ -86,27 +86,25 @@ export default function CoinsTable() {
                     style={{
                       cursor: "pointer",
                       backgroundColor: "black",
-                      " :hover": {
-                        backgroundColor: "green",
-                      },
+                      
+                    
                     }}
                   >
-                    <td
-                      style={{
-                        display: "flex",
-                        gap: 15,
-                      }}
+                    <td className="imgElement"
+                      
                     >
                       <img
                         src={row?.image}
                         alt={row.name}
                         height="50"
+                        width="50"
                         style={{ marginBottom: 10 }}
                       />
                       <div
                         style={{
                           display: "flex",
                           flexDirection: "column",
+                          marginLeft:"5px"
                         }}
                       >
                         <span
