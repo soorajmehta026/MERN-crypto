@@ -45,7 +45,7 @@ export default function Login() {
         navigate('/');
       }
       else {
-        alert('Email incorrect');
+        alert('Email incorrect or password');
       }
     } catch (err) {
       setlogged('Unregistered user, try signing up');
