@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { CoinList } from "../Config";
 import { CryptoState } from "../CryptoContext";
 import { useNavigate } from "react-router-dom";
-
+import './CoinsTable.css'
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -52,7 +52,7 @@ export default function CoinsTable() {
         </div>
       </div>
 
-      <div className="container">
+      <div className="table-container">
         {
           <table
             className="table table-borderless table-dark"

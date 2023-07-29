@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { watchlistdata } from "../Serverapi/api";
 import { sellshare } from "../Serverapi/api";
 import { useNavigate } from "react-router-dom";
-
+import './Watchlist.css'
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -88,10 +88,8 @@ function Watchlist() {
   }
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-        }}
+      <div className="all-container"
+        
       >
         <div
           style={{
@@ -104,7 +102,7 @@ function Watchlist() {
           <div>Net gains : ₹ {numberWithCommas(profit.toFixed(2))}</div>
         </div>
 
-        <div className="container">
+        <div className="table-container">
           {
             <table className="table table-borderless table-dark">
               <thead
@@ -115,15 +113,15 @@ function Watchlist() {
                 <tr
                   style={{
                     color: "black",
-                    fontWeight: "700",
+                    fontWeight: "bold",
                     fontFamily: "Montserrat",
                   }}
                 >
                   <th> Coin</th>
                   <th>Net Qty</th>
-                  <th>Avg Price</th>
-                  <th>Current Price</th>
-                  <th>Profit/loss</th>
+                  <th>Avg Price(₹)</th>
+                  <th>Current Price(₹)</th>
+                  <th>Profit/loss(₹)</th>
                   <th>Sell</th>
                 </tr>
               </thead>
@@ -193,15 +191,15 @@ function Watchlist() {
                           color: "white",
                         }}
                       >
-                        ₹ {numberWithCommas(item.boughtAt.toFixed(2))}
+                        {numberWithCommas(item.boughtAt.toFixed(2))}
                       </td>
-                      <td>₹ {numberWithCommas(currentPrice.toFixed(2))}</td>
+                      <td> {numberWithCommas(currentPrice.toFixed(2))}</td>
                       <td
                         style={{
                           color: net >= 0 ? "green" : "red",
                         }}
                       >
-                        ₹ {numberWithCommas(net.toFixed(2))} (
+                         {numberWithCommas(net.toFixed(2))} (
                         {numberWithCommas(percentage.toFixed(2))})%
                       </td>
                       <td>

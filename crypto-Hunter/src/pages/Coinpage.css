@@ -1,0 +1,43 @@
+/* Coinpage.css */
+
+/* Default styles for the flex container */
+.coinpage-container {
+    width: 100%;
+    display: flex;
+  }
+  
+  /* Styles for the left column */
+  .left-column {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    border-right: 2px solid grey;
+  }
+  
+  /* Styles for the right column */
+  .right-column {
+    width: 70%;
+    margin-top: 50px;
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media screen and (max-width: 768px) {
+    /* Change to a column layout for small screens */
+    .coinpage-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    /* Adjust the width of left and right columns for small screens */
+    .left-column
+    ,
+    .right-column {
+      width: 100%;
+      border-right: none;
+      margin-right: 0;
+      padding-right: 0;
+    }
+  }
+  

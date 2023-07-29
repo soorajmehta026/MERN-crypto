@@ -5,7 +5,7 @@ import { SingleCoin } from "../Config";
 import CoinInfo from "../components/CoinInfo";
 import { Parser } from "html-to-react";
 import { buyShare } from "../Serverapi/api";
-
+import './Coinpage.css'
 export default function Coinpage() {
   const { id } = useParams();
   const [coin, setCoin] = useState();
@@ -86,22 +86,11 @@ export default function Coinpage() {
 
   if (!coin) return <div>loading.........</div>;
   return (
-    <div
-      style={{
-        width: "100%",
-        display: "flex",
-      }}
+    <div className="coinpage-container"
+     
     >
-      <div
-        style={{
-          width: "30%",
-
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          marginTop: "50px",
-          borderRight: "2px solid grey",
-        }}
+      <div className="left-column"
+        
       >
         <img
           src={coin?.image.large}
@@ -204,10 +193,8 @@ export default function Coinpage() {
         }}>{alert}</div>
       </div>
 
-      <div
-        style={{
-          width: "70%",
-        }}
+      <div className="right-column"
+        
       >
         <CoinInfo coin={coin} />
       </div>

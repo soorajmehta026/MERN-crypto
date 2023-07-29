@@ -74,7 +74,7 @@ export default function Login() {
               setformdata({ ...formdata, password: e.target.value })
             }} required />
           </div>
-          <button type='submit' className="login-btn" disabled={isSubmitting} style={{ opacity: isSubmitting ? 0.5 : 1 }}>Login</button>
+          <button type='submit' className="login-btn" disabled={isSubmitting} style={{ backgroundColor: isSubmitting ? 'lightblue':'blue' }}>Login</button>
           <button className="login-btn" style={{ backgroundColor: 'green' }} onClick={() => navigate('/signup')}>Sign-up</button>
         </div>
       </form>

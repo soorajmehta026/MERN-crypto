@@ -4,7 +4,7 @@ import SelectButton from "./SelectButton";
 import { HistoricalChart } from "../Config";
 import { Line } from "react-chartjs-2";
 import { CategoryScale, Chart } from "chart.js";
-
+import './CoinInfo.css'
 import { registerables } from "chart.js";
 Chart.register(CategoryScale);
 Chart.register(...registerables);
@@ -43,7 +43,7 @@ export default function CoinInfo({ coin }) {
         <div>Loading.....</div>
       ) : (
         <>
-          <div style={{ width: "100%", padding: 20 }}>
+          <div className="chart">
             <Line
               data={{
                 labels: historicalData.map((coin) => {
@@ -71,13 +71,9 @@ export default function CoinInfo({ coin }) {
               }}
             />
           </div>
-          <div
+          <div className="Buttons-container"
             style={{
-              display: "flex",
-              flexDirection: "row",
-              marginTop: 20,
-              width: "100%",
-              justifyContent: "space-around",
+             
             }}
           >
             <SelectButton
